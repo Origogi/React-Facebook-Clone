@@ -1,14 +1,18 @@
 import React from "react";
 import "./Header.css";
 import {
+  Add,
+  ExpandMore,
   Flag,
+  Forum,
   Home,
+  NotificationsActive,
   Search,
   StorefrontOutlined,
   SubscriptionsOutlined,
   SupervisedUserCircle,
 } from "@mui/icons-material";
-import { Avatar } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 
 function Header() {
   return (
@@ -41,10 +45,23 @@ function Header() {
         </div>
       </div>
       <div className="header__right">
-          <div className="header__info">
-              <Avatar />
-              <h4>Origogi</h4>
-          </div>
+        <div className="header__info">
+          <Avatar />
+          <h4>Origogi</h4>
+        </div>
+
+        <IconButton>
+          <Add />
+        </IconButton>
+        <IconButton>
+          <Forum />
+        </IconButton>
+        <IconButton>
+          <NotificationsActive />
+        </IconButton>
+        <IconButton>
+          <ExpandMore />
+        </IconButton>
       </div>
     </div>
   );
