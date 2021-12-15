@@ -1,6 +1,14 @@
 import React from "react";
 import "./Header.css";
-import { Search } from "@mui/icons-material";
+import {
+  Flag,
+  Home,
+  Search,
+  StorefrontOutlined,
+  SubscriptionsOutlined,
+  SupervisedUserCircle,
+} from "@mui/icons-material";
+import { Avatar } from "@mui/material";
 
 function Header() {
   return (
@@ -15,8 +23,29 @@ function Header() {
         <Search />
         <input type="text" />
       </div>
-      <div className="header__middle"></div>
-      <div className="header__right"></div>
+      <div className="header__middle">
+        <div className="header__option">
+          <Home fontSize="large" />
+        </div>
+        <div className="header__option">
+          <Flag fontSize="large" />
+        </div>
+        <div className="header__option">
+          <SubscriptionsOutlined fontSize="large" />
+        </div>
+        <div className="header__option">
+          <StorefrontOutlined fontSize="large" />
+        </div>
+        <div className="header__option">
+          <SupervisedUserCircle fontSize="large" />
+        </div>
+      </div>
+      <div className="header__right">
+          <div className="header__info">
+              <Avatar />
+              <h4>Origogi</h4>
+          </div>
+      </div>
     </div>
   );
 }
