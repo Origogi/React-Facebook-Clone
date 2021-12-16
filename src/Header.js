@@ -22,12 +22,12 @@ function Header() {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/150px-2021_Facebook_icon.svg.png"
           alt=""
         />
+        <div className="header__input">
+          <Search />
+          <input type="text" />
+        </div>
       </div>
-      <div className="header__input">
-        <Search />
-        <input type="text" />
-      </div>
-      <div className="header__middle">
+      <div className="header__center">
         <div className="header__option">
           <Home fontSize="large" />
         </div>
