@@ -14,7 +14,7 @@ import SidebarRow from "./SidebarRow";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <SidebarRow src='' title='Origogi' />
+      <SidebarRow src='https://avatars.githubusercontent.com/u/35194820?v=4' title='Origogi' />
       <SidebarRow Icon={LocalHospital} title="COVID-19 Information Center" />
       <SidebarRow Icon={People} title="Freinds" />
       <SidebarRow Icon={Chat} title="Messenger" />
