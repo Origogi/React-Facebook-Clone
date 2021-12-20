@@ -5,7 +5,7 @@ import Feed from "./Feed";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
 
       <div className="app__body">
@@ -13,7 +13,6 @@ function App() {
         <Feed />
         {/* Widget */}
       </div>
-
     </div>
   );
 }

@@ -1,12 +1,12 @@
+import { InsertEmoticon, PhotoLibrary, Videocam } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import React from "react";
 import "./MessageSender.css";
 
 function MessageSender() {
-
-   const handleSubmit = (e) => {
-     e.preventDefault();
-   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="messageSender">
@@ -25,7 +25,22 @@ function MessageSender() {
         </form>
       </div>
 
-      <div className="messageSender__bottom"></div>
+      <div className="messageSender__bottom">
+        <div className="messageSender__option">
+          <Videocam style={{ color: "red" }} />
+          <h3>Live Video</h3>
+        </div>
+
+        <div className="messageSender__option">
+          <PhotoLibrary style={{ color: "green" }} />
+          <h3>Photo/Video</h3>
+        </div>
+
+        <div className="messageSender__option">
+          <InsertEmoticon style={{ color: "orange" }} />
+          <h3>Feeling/Activity</h3>
+        </div>
+      </div>
     </div>
   );
 }
