@@ -10,7 +10,7 @@ function Login() {
 
     signInWithPopup(auth, provider)
       .then((result) => {
-        alert(result);
+        console.log(result);
       })
       .catch((error) => alert(error.message));
   };
