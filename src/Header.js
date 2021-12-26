@@ -13,8 +13,11 @@ import {
   SupervisedUserCircle,
 } from "@mui/icons-material";
 import { Avatar, IconButton } from "@mui/material";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="header">
       <div className="header__left">
@@ -24,7 +27,7 @@ function Header() {
         />
         <div className="header__input">
           <Search />
-          <input type="text" placeholder="Search Facebook"/>
+          <input type="text" placeholder="Search Facebook" />
         </div>
       </div>
       <div className="header__center">
@@ -46,8 +49,8 @@ function Header() {
       </div>
       <div className="header__right">
         <div className="header__info">
-          <Avatar />
-          <h4>Origogi</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
 
         <IconButton>

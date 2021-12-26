@@ -10,13 +10,15 @@ import { getDisplayName } from "@mui/utils";
 import React from "react";
 import "./Sidebar.css";
 import SidebarRow from "./SidebarRow";
+import { useStateValue } from "./StateProvider";
 
 function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-      <SidebarRow src='https://avatars.githubusercontent.com/u/35194820?v=4' title='Origogi' />
+      <SidebarRow src={user.photoURL} title={user.displayName} />
       <SidebarRow Icon={LocalHospital} title="COVID-19 Information Center" />
-      <SidebarRow Icon={People} title="Freinds" />
+      <SidebarRow Icon={People} title="Friends" />
       <SidebarRow Icon={Chat} title="Messenger" />
       <SidebarRow Icon={StorefrontOutlined} title="Marketplace" />
       <SidebarRow Icon={VideoLibrary} title="Videos" />
