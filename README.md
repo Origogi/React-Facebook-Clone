@@ -17,7 +17,7 @@
 
 [link](https://facebook-clone-c4a66.web.app)
 
-
 ## TODO
 
-- [ ] split firestore data for each user
+- [ ] Split firestore data for each user
+- [ ] Enable github action
