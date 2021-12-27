@@ -3,6 +3,8 @@ import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import "./MessageSender.css";
 import { useStateValue } from "./StateProvider";
+import db from "./firebase";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 function MessageSender() {
   const [input, setInput] = useState("");
@@ -10,11 +12,19 @@ function MessageSender() {
 
   const [{ user }, dispatch] = useStateValue();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setInput("");
     setImageUrl("");
+
+    await addDoc(collection(db, "posts"), {
+      message: input,
+      timestamp: Timestamp.fromDate(new Date()),
+      profilePic: user.photoURL,
+      userName: user.displayName,
+      image: imageUrl,
+    });
   };
 
   return (
