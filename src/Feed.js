@@ -9,17 +9,22 @@ import { collection, getDocs } from "firebase/firestore";
 function Feed() {
   const [posts, setPosts] = useState([]);
 
-  useEffect(async () => {
-    const querySnapshot = await getDocs(collection(db, "posts"));
-    setPosts(
-      querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        data: doc.data(),
-      }))
-    );
+  useEffect(() => {
+    const fetchData = async () => {
+      const querySnapshot = await getDocs(collection(db, "posts"));
+      setPosts(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    };
+    fetchData();
   }, []);
 
-  console.log(posts);
+  posts.forEach((post) => {
+    console.log(post);
+  });
 
   return (
     <div className="feed">
@@ -29,11 +34,11 @@ function Feed() {
       {posts.map((post) => (
         <Post
           key={post.id}
-          profilePic={post.profilePic}
-          message={post.message}
-          timestamp={post.timestamp}
-          userName={post.userName}
-          image={post.image}
+          profilePic={post.data.profilePic}
+          message={post.data.message}
+          timestamp={post.data.timestamp}
+          userName={post.data.userName}
+          image={post.data.image}
         />
       ))}
     </div>
