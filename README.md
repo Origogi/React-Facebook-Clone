@@ -1,5 +1,14 @@
 # React Facebook Clone app
 
+## Library
+
+- Redux
+- Material UI
+- Firebase
+  - Google Auth
+  - Firestore
+  - Hosting
+
 ## Reference
 
 [Youtube][https://www.youtube.com/watch?v=B-kxUMHBxNo()
