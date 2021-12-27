@@ -4,14 +4,15 @@ import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
 import db from "./firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, orderBy } from "firebase/firestore";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const querySnapshot = await getDocs(collection(db, "posts"));
+      const q= query(collection(db, "posts"), orderBy("timestamp", "desc"));
+      const querySnapshot = await getDocs(q);
       setPosts(
         querySnapshot.docs.map((doc) => ({
           id: doc.id,
