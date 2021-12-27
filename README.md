@@ -16,3 +16,8 @@
 ## Host URL
 
 [link](https://facebook-clone-c4a66.web.app)
+
+
+## TODO
+
+- [ ] split firestore data for each user
