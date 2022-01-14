@@ -19,5 +19,4 @@
 
 ## TODO
 
-- [ ] Split firestore data for each user
 - [ ] Enable github action
